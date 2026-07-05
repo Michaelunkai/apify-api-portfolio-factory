@@ -1,0 +1,10 @@
+node_modules/
+dist/
+storage/
+.env
+.env.*
+!.env.example
+*.log
+apify_storage/
+coverage/
+.apify/

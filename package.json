@@ -1,0 +1,37 @@
+{
+  "name": "apify-api-portfolio-factory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A production-ready Apify Actor portfolio factory for building and selling small API-style Actors.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "start": "tsx src/main.ts",
+    "permission:test": "tsx scripts/test-apify-permissions.ts",
+    "deploy": "tsx scripts/deploy-actor.ts",
+    "smoke:apify": "tsx scripts/smoke-apify-run.ts",
+    "run:local": "tsx scripts/run-local.ts",
+    "scan:secrets": "tsx scripts/scan-secrets.ts",
+    "verify": "npm run build && npm run lint && npm run test && npm run scan:secrets"
+  },
+  "dependencies": {
+    "apify": "^3.4.2",
+    "cheerio": "^1.1.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.0.15",
+    "eslint": "^9.32.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
