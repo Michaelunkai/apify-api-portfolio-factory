@@ -5,7 +5,7 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['dist/**', 'node_modules/**', 'storage/**'],
+    ignores: ['dist/**', 'dist-site/**', 'node_modules/**', 'storage/**'],
   },
   {
     files: ['**/*.ts'],
@@ -21,6 +21,9 @@ export default [
         clearTimeout: 'readonly',
         AbortController: 'readonly',
         fetch: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        navigator: 'readonly',
       },
     },
     rules: {

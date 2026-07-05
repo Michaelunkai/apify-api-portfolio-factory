@@ -7,10 +7,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "jsx": "react-jsx",
     "outDir": "dist",
     "rootDir": ".",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "eslint.config.js"],
+  "include": ["src/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "site/**/*.ts", "site/**/*.tsx", "vite.config.ts", "vitest.config.ts", "eslint.config.js"],
   "exclude": ["node_modules", "dist", "storage"]
 }

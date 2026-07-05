@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-site/
 storage/
 .env
 .env.*
@@ -8,3 +9,5 @@ storage/
 apify_storage/
 coverage/
 .apify/
+.netlify/
+.qa/
