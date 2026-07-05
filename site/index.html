@@ -7,6 +7,13 @@
     <title>URL Intelligence API</title>
   </head>
   <body>
+    <form name="api-leads" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="useCase" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -7,11 +7,10 @@ import {
   Database,
   GitBranch,
   Globe2,
-  LineChart,
-  Lock,
-  Play,
+  Mail,
   Rocket,
   ShieldCheck,
+  ShoppingCart,
   Terminal,
 } from 'lucide-react';
 
@@ -29,16 +28,23 @@ const sampleOutput = {
 };
 
 const workflow = [
-  ['Input', 'Send up to 100 public URLs with timeout and link limits.'],
-  ['Analyze', 'Extract metadata, canonical URLs, text stats, emails, links, and technology hints.'],
-  ['Return', 'Receive normalized dataset rows from a private Apify Actor run.'],
-  ['Scale', 'Clone the same factory pattern into adjacent sellable API Actors.'],
+  ['Visitor lands here', 'The website explains the API, shows proof, and makes the use case obvious in seconds.'],
+  ['Buyer clicks Apify', 'The primary CTA sends qualified users to the Actor page where they can run the API.'],
+  ['Usage is metered', 'Apify handles execution, logs, datasets, and usage-based product delivery.'],
+  ['You improve winners', 'Keep the Actor reliable and clone the same website-plus-Actor funnel into related APIs.'],
 ];
 
 const proofItems = [
   ['Permission test', 'Auth, Actor create/delete, and KV read/write/delete passed.'],
   ['Cloud build', 'Private Actor version 0.2 built successfully on Apify.'],
   ['Smoke test', 'Live run returned one valid dataset item for example.com.'],
+];
+
+const incomeSteps = [
+  ['Traffic arrives', 'Search, posts, docs, GitHub, and Apify discovery send users to this page. The page explains one paid outcome: URL intelligence without custom scraping code.'],
+  ['Visitors convert', 'The website pushes two actions: run the Actor on Apify or submit the buyer form for managed access, integrations, or bulk usage.'],
+  ['The product delivers itself', 'Customers run the Actor in Apify. The API produces dataset rows automatically, so you do not manually fulfill each order.'],
+  ['Revenue compounds', 'After marketplace monetization and payout setup are enabled, usage can create recurring revenue while the same funnel is cloned for more Actors.'],
 ];
 
 export function App() {
@@ -75,28 +81,28 @@ export function App() {
         <nav aria-label="Primary navigation">
           <a href="#product">Product</a>
           <a href="#output">Output</a>
-          <a href="#deploy">Deploy</a>
+          <a href="#income">Income</a>
           <a href="#pricing">Pricing</a>
         </nav>
         <a className="header-action" href={`https://console.apify.com/actors/${actorRef}`} target="_blank" rel="noreferrer">
-          Run on Apify
+          Buy API access
           <ArrowRight size={16} />
         </a>
       </header>
 
       <section id="top" className="hero">
         <div className="hero-copy">
-          <h1>Turn any public URL into clean API-ready intelligence.</h1>
+          <h1>Sell URL intelligence while the API runs itself.</h1>
           <p>
-            Metadata, links, text statistics, contact hints, and technology signals from a private Apify Actor that is already live.
+            A live Apify Actor turns public URLs into metadata, links, text statistics, contact hints, and technology signals. This page is the sales funnel that sends buyers to run it.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href={`https://console.apify.com/actors/${actorRef}`} target="_blank" rel="noreferrer">
-              <Play size={18} />
-              Run on Apify
+              <ShoppingCart size={18} />
+              Buy API access
             </a>
-            <a className="secondary-action" href="#demo">
-              View request
+            <a className="secondary-action" href="#lead-form">
+              Request managed access
               <ArrowRight size={17} />
             </a>
           </div>
@@ -120,13 +126,13 @@ export function App() {
         <div>
           <h2>A focused API Actor, not a generic scraper.</h2>
           <p>
-            URL Intelligence API is built for lead enrichment, SEO triage, AI-agent preprocessing, and competitive research pipelines that need predictable rows instead of raw HTML.
+            URL Intelligence API is a small paid utility for lead enrichment, SEO triage, AI-agent preprocessing, and competitive research pipelines that need predictable rows instead of raw HTML.
           </p>
         </div>
         <div className="feature-list">
           <Feature icon={<Globe2 />} title="Public URL input" text="Validated HTTP and HTTPS URLs with conservative timeout controls." />
           <Feature icon={<Database />} title="Dataset-ready output" text="Stable fields for status, title, links, word counts, and technology hints." />
-          <Feature icon={<ShieldCheck />} title="Private by default" text="Deploy, test, and price before exposing anything to the marketplace." />
+          <Feature icon={<ShieldCheck />} title="Built to sell" text="A narrow promise, working proof, pricing copy, and buyer capture are all on this page." />
         </div>
       </section>
 
@@ -166,8 +172,8 @@ export function App() {
 
       <section className="workflow-section">
         <div className="section-heading">
-          <h2>The factory loop is ready to repeat.</h2>
-          <p>One verified Actor becomes a reusable portfolio pattern for adjacent sellable APIs.</p>
+          <h2>The website is the acquisition machine.</h2>
+          <p>The Actor does the work. The website explains the value, captures demand, and sends users to the paid run path.</p>
         </div>
         <div className="timeline">
           {workflow.map(([title, text], index) => (
@@ -204,19 +210,72 @@ export function App() {
         </div>
       </section>
 
+      <section className="income-section" id="income">
+        <div className="section-heading">
+          <h2>How the website is meant to make passive income.</h2>
+          <p>
+            It works as a public storefront for a small API product: visitors find the page, understand the offer, click to run the Actor, or submit a buyer request.
+          </p>
+        </div>
+        <div className="income-grid">
+          {incomeSteps.map(([title, text], index) => (
+            <article className="income-card" key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="income-note">
+          <strong>Realistic expectation:</strong>
+          <p>
+            The website can sell and capture buyers 24/7, but real revenue still requires traffic plus enabled Apify monetization or a payment/contract path for captured leads.
+          </p>
+        </div>
+      </section>
+
       <section id="pricing" className="pricing-section">
         <div className="pricing-copy">
-          <h2>Ready for marketplace packaging.</h2>
+          <h2>Pricing designed for a small API product.</h2>
           <p>
-            Start private, publish only after Apify account-owner payout and marketplace prompts are complete, then price the Actor as a narrow API utility with low support load.
+            The page sells the outcome, not the code: clean URL intelligence for teams that do not want to build and maintain their own scraper.
           </p>
         </div>
         <div className="pricing-panel">
-          <div><Lock size={18} /> Private testing</div>
-          <div><LineChart size={18} /> Usage monitoring</div>
+          <div><ShoppingCart size={18} /> Buy on Apify</div>
+          <div><Mail size={18} /> Capture high-intent leads</div>
           <div><GitBranch size={18} /> Portfolio cloning</div>
           <div><Terminal size={18} /> CI deployment</div>
         </div>
+      </section>
+
+      <section className="lead-section" id="lead-form">
+        <div>
+          <h2>Capture buyers who need more than a one-off run.</h2>
+          <p>
+            Some visitors will want volume runs, integrations, or managed delivery. This Netlify form turns those visitors into leads you can close separately.
+          </p>
+        </div>
+        <form name="api-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="lead-form">
+          <input type="hidden" name="form-name" value="api-leads" />
+          <p className="hidden-field">
+            <label>Do not fill this out: <input name="bot-field" /></label>
+          </p>
+          <label htmlFor="lead-name">Name</label>
+          <input id="lead-name" name="name" autoComplete="name" required />
+          <label htmlFor="lead-email">Email</label>
+          <input id="lead-email" name="email" type="email" autoComplete="email" required />
+          <label htmlFor="lead-company">Company</label>
+          <input id="lead-company" name="company" autoComplete="organization" />
+          <label htmlFor="lead-use-case">Use case</label>
+          <input id="lead-use-case" name="useCase" placeholder="Lead enrichment, SEO audit, AI agent preprocessing..." />
+          <label htmlFor="lead-message">Message</label>
+          <textarea id="lead-message" name="message" rows={4} placeholder="Tell me how many URLs you need processed and how often." />
+          <button className="copy-button" type="submit">
+            <Mail size={17} />
+            Request API access
+          </button>
+        </form>
       </section>
 
       <footer>
